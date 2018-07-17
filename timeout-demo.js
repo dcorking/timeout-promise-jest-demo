@@ -1,7 +1,15 @@
 "use strict";
 
+const util = require("util");
+const setTimeoutPromise = util.promisify(setTimeout);
+const delay = 1000;
+
 const timeoutDemo = async () => {
-  console.log("Hello world");
+  console.log(
+    `${new Date().toISOString()} starting timer for ${delay} milliseconds`
+  );
+  setTimeoutPromise(delay);
+  console.log(`${new Date().toISOString()} timer complete`);
 };
 
 module.exports = {

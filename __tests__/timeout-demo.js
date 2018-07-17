@@ -2,6 +2,6 @@ const timeoutDemo = require("../timeout-demo").timeoutDemo;
 
 describe("Timeout promise demo", () => {
   test("completes", async () => {
-    timeoutDemo();
+    await timeoutDemo();
   });
 });
