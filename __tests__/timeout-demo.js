@@ -1,12 +1,11 @@
 "use strict";
 
+const helpers = jest.mock("../helpers");
 const timeoutDemo = require("../timeout-demo").timeoutDemo;
 
-jest.useFakeTimers();
-
 test("Timeout promise demo", async () => {
+  helpers.setTimeoutPromise = jest.fn().mockImplementation(delay => {
+    console.log(`Fake timeout set for ${delay} ms`);
+  });
   timeoutDemo();
-
-  // expect(setTimeout).toHaveBeenCalledTimes(1);
-  // FAIL Expected mock function to have been called one time, but it was called zero times.
 });

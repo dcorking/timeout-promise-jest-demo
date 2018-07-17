@@ -1,15 +1,18 @@
 "use strict";
 
-const util = require("util");
-const setTimeoutPromise = util.promisify(setTimeout);
+const helpers = require("./helpers");
 const delay = 1000;
 
 const timeoutDemo = async () => {
   console.log(
     `${new Date().toISOString()} starting timer for ${delay} milliseconds`
   );
-  await setTimeoutPromise(delay);
+
+  await helpers.setTimeoutPromise(delay);
+
   console.log(`${new Date().toISOString()} timer complete`);
+
+  return "demo complete";
 };
 
 module.exports = {
