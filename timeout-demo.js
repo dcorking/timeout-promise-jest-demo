@@ -8,7 +8,7 @@ const timeoutDemo = async () => {
   console.log(
     `${new Date().toISOString()} starting timer for ${delay} milliseconds`
   );
-  setTimeoutPromise(delay);
+  await setTimeoutPromise(delay);
   console.log(`${new Date().toISOString()} timer complete`);
 };
 
